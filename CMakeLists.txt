@@ -16,6 +16,12 @@ target_sources(${PROJECT_NAME}
     main.cpp
 )
 
+option(OPTION_ONE "Test CMake 'option' function. (ON or OFF)" OFF) # OFF by default
+
+if(OPTION_ONE)
+  target_compile_definitions(${PROJECT_NAME} PUBLIC OPTION_ONE_DEF)
+endif()
+
 message("version is: ${PROJECT_VERSION}")
 message("version major: ${PROJECT_VERSION_MAJOR}")
 message("version minor: ${PROJECT_VERSION_MINOR}")
